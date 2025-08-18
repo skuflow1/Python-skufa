@@ -8,16 +8,15 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 def chatbot():
     print("Chatbot: Hello! How can I assist you?")
-    corpus = ["hello", "how are you", "goodbye"]
-    vectorizer = TfidfVectorizer().fit(corpus)
     while True:
         user_input = input("You: ").lower()
-        vec = vectorizer.transform([user_input])
-        similarities = cosine_similarity(vec, vectorizer.transform(corpus))
-        best_match = corpus[similarities.argmax()]
-        if best_match == "hello":
+        if "hello" in user_input:
             print("Chatbot: Hi there!")
-        elif best_match == "goodbye":
+        elif "hola" in user_input:  # Spanish
+            print("Chatbot: ¡Hola!")
+        elif "bonjour" in user_input:  # French
+            print("Chatbot: Bonjour!")
+        elif "bye" in user_input:
             print("Chatbot: Goodbye!")
             break
         else:
