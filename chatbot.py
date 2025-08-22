@@ -21,5 +21,15 @@ def chatbot():
             break
         else:
             print("Chatbot: I'm sorry, I don't understand.")
+            
+from transformers import pipeline
+chatbot = pipeline("text-generation", model="gpt-2")
+
+def chatbot_response(prompt):
+    response = chatbot(prompt, max_length=50)
+    print(response[0]['generated_text'])
+
+# Example usage
+chatbot_response("Hello, how are you?")           
 # Example usage
 chatbot()
