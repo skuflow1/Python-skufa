@@ -1,5 +1,3 @@
-### **Repository 8: Chatbot**
-```python
 # Repository: python-chatbot
 # Description: A simple rule-based chatbot.
 
